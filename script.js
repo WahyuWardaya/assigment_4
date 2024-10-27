@@ -12,6 +12,7 @@ editButton.onclick = function () {
   }
 };
 
+// Menyimpan Data Profil ke localStorage
 var saveButton = document.querySelector('.btn-outline-success');
 
 saveButton.onclick = function () {
@@ -35,6 +36,7 @@ saveButton.onclick = function () {
 
   localStorage.setItem('userData', JSON.stringify(userData));
 
+  // Menampilkan Data Profil
   document.getElementById('nama').innerHTML = nama;
   document.getElementById('role').innerHTML = role;
   document.getElementById('availability').innerHTML = availability;
@@ -52,6 +54,7 @@ window.onload = function () {
   var userData = JSON.parse(localStorage.getItem('userData'));
 
   if (userData) {
+    // menampilkan data yang tersimpan di local storage di user profile
     document.getElementById('nama').innerHTML = userData.nama;
     document.getElementById('role').innerHTML = userData.role;
     document.getElementById('availability').innerHTML = userData.availability;
@@ -60,6 +63,7 @@ window.onload = function () {
     document.getElementById('pengalaman').innerHTML = userData.pengalaman;
     document.getElementById('email').innerHTML = userData.email;
 
+    // menampilkan data yang tersimpan di local storage di form
     document.getElementById('form-name').querySelector('input').value = userData.nama;
     document.getElementById('form-role').querySelector('input').value = userData.role;
     document.getElementById('form-availability').querySelector('input').value = userData.availability;
