@@ -1,3 +1,4 @@
+//menyembunyikan dan memunculkan form
 var form = document.getElementById('editForm');
 form.style.display = 'none';
 
@@ -67,7 +68,5 @@ window.onload = function () {
     document.getElementById('form-pengalaman').querySelector('input').value = userData.pengalaman;
     document.getElementById('form-email').querySelector('input').value = userData.email;
   } else {
-    document.getElementById('nama').innerHTML = 'Your Name';
-    document.getElementById('role').innerHTML = 'Your Role';
   }
 };
