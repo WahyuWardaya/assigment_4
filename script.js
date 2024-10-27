@@ -22,13 +22,17 @@ saveButton.onclick = function () {
   var pengalaman = document.getElementById('btn-pengalaman').querySelector('input').value;
   var email = document.getElementById('btn-email').querySelector('input').value;
 
-  localStorage.setItem('nama', nama);
-  localStorage.setItem('role', role);
-  localStorage.setItem('availability', availability);
-  localStorage.setItem('umur', umur);
-  localStorage.setItem('lokasi', lokasi);
-  localStorage.setItem('pengalaman', pengalaman);
-  localStorage.setItem('email', email);
+  var userData = {
+    nama: nama,
+    role: role,
+    availability: availability,
+    umur: umur,
+    lokasi: lokasi,
+    pengalaman: pengalaman,
+    email: email,
+  };
+
+  localStorage.setItem('userData', JSON.stringify(userData));
 
   document.getElementById('nama').textContent = nama || 'Your Name';
   document.getElementById('role').textContent = role || 'Your Role';
@@ -37,6 +41,8 @@ saveButton.onclick = function () {
   document.getElementById('lokasi').innerHTML = `<strong>Lokasi</strong> ${lokasi || 'Empty'}`;
   document.getElementById('pengalaman').innerHTML = `<strong>Pengalaman</strong> ${pengalaman || 'Empty'}`;
   document.getElementById('email').innerHTML = `<strong>Email</strong> ${email || 'Empty'}`;
+
+  console.log('User Data:', JSON.parse(localStorage.getItem('userData')));
 
   form.style.display = 'none';
 };
