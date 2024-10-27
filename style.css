@@ -64,7 +64,7 @@
 }
 
 .info-profile {
-  flex: 3;
+  flex: 1;
 }
 
 .info-profile ul {
@@ -76,7 +76,15 @@
   margin-bottom: 10px;
 }
 
-.info-profile li strong {
-  display: inline-block;
-  width: 150px;
+.right-profile {
+  flex: 2;
+}
+
+.right-profile ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.right-profile li {
+  margin-bottom: 10px;
 }

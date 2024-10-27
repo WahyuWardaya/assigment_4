@@ -34,13 +34,13 @@ saveButton.onclick = function () {
 
   localStorage.setItem('userData', JSON.stringify(userData));
 
-  document.getElementById('nama').textContent = nama || 'Your Name';
-  document.getElementById('role').textContent = role || 'Your Role';
-  document.getElementById('availability').innerHTML = `<strong>Availability</strong> ${availability || 'Empty'}`;
-  document.getElementById('umur').innerHTML = `<strong>Umur</strong> ${umur || 'Empty'}`;
-  document.getElementById('lokasi').innerHTML = `<strong>Lokasi</strong> ${lokasi || 'Empty'}`;
-  document.getElementById('pengalaman').innerHTML = `<strong>Pengalaman</strong> ${pengalaman || 'Empty'}`;
-  document.getElementById('email').innerHTML = `<strong>Email</strong> ${email || 'Empty'}`;
+  document.getElementById('nama').innerHTML = nama;
+  document.getElementById('role').innerHTML = role;
+  document.getElementById('availability').innerHTML = availability;
+  document.getElementById('umur').innerHTML = umur;
+  document.getElementById('lokasi').innerHTML = lokasi;
+  document.getElementById('pengalaman').innerHTML = pengalaman;
+  document.getElementById('email').innerHTML = email;
 
   console.log('User Data:', JSON.parse(localStorage.getItem('userData')));
 
@@ -51,20 +51,23 @@ window.onload = function () {
   var userData = JSON.parse(localStorage.getItem('userData'));
 
   if (userData) {
-    document.getElementById('nama').textContent = userData.nama || 'Your Name';
-    document.getElementById('role').textContent = userData.role || 'Your Role';
-    document.getElementById('availability').innerHTML = `<strong>Availability</strong> ${userData.availability || 'Empty'}`;
-    document.getElementById('umur').innerHTML = `<strong>Umur</strong> ${userData.umur || 'Empty'}`;
-    document.getElementById('lokasi').innerHTML = `<strong>Lokasi</strong> ${userData.lokasi || 'Empty'}`;
-    document.getElementById('pengalaman').innerHTML = `<strong>Pengalaman</strong> ${userData.pengalaman || 'Empty'}`;
-    document.getElementById('email').innerHTML = `<strong>Email</strong> ${userData.email || 'Empty'}`;
+    document.getElementById('nama').innerHTML = userData.nama;
+    document.getElementById('role').innerHTML = userData.role;
+    document.getElementById('availability').innerHTML = userData.availability;
+    document.getElementById('umur').innerHTML = userData.umur;
+    document.getElementById('lokasi').innerHTML = userData.lokasi;
+    document.getElementById('pengalaman').innerHTML = userData.pengalaman;
+    document.getElementById('email').innerHTML = userData.email;
+
+    document.getElementById('form-name').querySelector('input').value = userData.nama;
+    document.getElementById('form-role').querySelector('input').value = userData.role;
+    document.getElementById('form-availability').querySelector('input').value = userData.availability;
+    document.getElementById('form-umur').querySelector('input').value = userData.umur;
+    document.getElementById('form-lokasi').querySelector('input').value = userData.lokasi;
+    document.getElementById('form-pengalaman').querySelector('input').value = userData.pengalaman;
+    document.getElementById('form-email').querySelector('input').value = userData.email;
   } else {
-    document.getElementById('nama').textContent = 'Your Name';
-    document.getElementById('role').textContent = 'Your Role';
-    document.getElementById('availability').innerHTML = `<strong>Availability</strong> Empty`;
-    document.getElementById('umur').innerHTML = `<strong>Umur</strong> Empty`;
-    document.getElementById('lokasi').innerHTML = `<strong>Lokasi</strong> Empty`;
-    document.getElementById('pengalaman').innerHTML = `<strong>Pengalaman</strong> Empty`;
-    document.getElementById('email').innerHTML = `<strong>Email</strong> Empty`;
+    document.getElementById('nama').innerHTML = 'Your Name';
+    document.getElementById('role').innerHTML = 'Your Role';
   }
 };
