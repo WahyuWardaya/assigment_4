@@ -71,6 +71,5 @@ window.onload = function () {
     document.getElementById('form-lokasi').querySelector('input').value = userData.lokasi;
     document.getElementById('form-pengalaman').querySelector('input').value = userData.pengalaman;
     document.getElementById('form-email').querySelector('input').value = userData.email;
-  } else {
   }
 };
